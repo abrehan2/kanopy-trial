@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import { GeistSans } from 'geist/font/sans';
+import { fraunces, jost } from './fonts';
+import { AppToaster } from '@/components/feedback/AppToaster';
 
 export const metadata: Metadata = {
   title: 'Kanopy',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.variable} antialiased`}>{children}</body>
+      <body className={`${jost.variable} ${fraunces.variable} antialiased`}>
+        {children}
+        <AppToaster />
+      </body>
     </html>
   );
 }
