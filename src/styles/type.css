@@ -108,4 +108,7 @@
   --text-about-name: 36px;
   --text-about-name--line-height: 41px;
   --text-about-name--letter-spacing: -0.36px;
+  --text-results-hero: 72px;
+  --text-results-hero--line-height: 83px;
+  --text-results-hero--letter-spacing: -0.72px;
 }

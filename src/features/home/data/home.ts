@@ -1,6 +1,9 @@
 export const PHONE_CA = '(949) 555-0148';
 export const PHONE_NV = '(702) 555-0163';
 
+export const FIGMA_REVIEWS_HREF =
+  'https://www.figma.com/design/8SP7Mfi9CUG72lOZlODb3x/RK-Legal-%E2%80%94-Competitor-Clones?node-id=249-2&m=dev&focus-id=259-4537';
+
 export const HOME_ASSETS = {
   hero: '/images/hero.jpg',
   attorneys: '/images/attorneys.jpg',

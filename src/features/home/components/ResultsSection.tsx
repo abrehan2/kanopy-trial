@@ -26,7 +26,7 @@ export function ResultsSection({ results }: ResultsSectionProps) {
           <ResultRow key={row.title} row={row} />
         ))}
       </div>
-      <TextLink href="#review-form" className="text-when font-medium text-paper max-compact:hidden">
+      <TextLink href="/results" className="text-when font-medium text-paper max-compact:hidden">
         See more results
       </TextLink>
       <p className="font-jost text-label text-moss max-compact:text-micro">

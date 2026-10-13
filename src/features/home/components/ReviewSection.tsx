@@ -1,4 +1,5 @@
 import { TextLink } from '@/components/ui/text-link';
+import { FIGMA_REVIEWS_HREF } from '@/features/home/data/home';
 
 export function ReviewSection() {
   return (
@@ -17,10 +18,7 @@ export function ReviewSection() {
       <p className="font-jost text-when text-stone max-compact:text-hint">
         Maria G., rear-ended on the 405
       </p>
-      <TextLink
-        href="https://www.figma.com/design/8SP7Mfi9CUG72lOZlODb3x/RK-Legal-%E2%80%94-Competitor-Clones?node-id=249-2&m=dev&focus-id=259-4537"
-        className="max-compact:hidden"
-      >
+      <TextLink href={FIGMA_REVIEWS_HREF} className="max-compact:hidden">
         Read our reviews on Google
       </TextLink>
     </section>

@@ -123,4 +123,12 @@
   --spacing-about-hero-pb-sm: 40px;
   --spacing-about-portrait-h-sm: 300px;
   --spacing-about-attorneys-pt-sm: 24px;
+  --spacing-results-hero-pt: 72px;
+  --spacing-results-hero-pb: 48px;
+  --spacing-results-list-pt: 16px;
+  --spacing-results-row-y: 30px;
+  --spacing-results-amt: 300px;
+  --spacing-results-hero-pb-sm: 8px;
+  --spacing-results-row-y-sm: 18px;
+  --spacing-results-list-pb-sm: 56px;
 }
