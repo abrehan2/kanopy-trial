@@ -4,7 +4,7 @@ export const HOME_NAV: NavLink[] = [
   { href: '#advice', label: 'Practice areas' },
   { href: '/results', label: 'Results' },
   { href: '/about', label: 'About' },
-  { href: '#review-form', label: 'Contact' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export const HOME_PRACTICES = [

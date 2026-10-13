@@ -1,0 +1,48 @@
+export const CONTACT_FIGMA = {
+  pageX: 64,
+  paper: 'rgb(241, 238, 231)',
+  footer: 'rgb(15, 28, 29)',
+  headerH: 96,
+  heroPt: 72,
+  heroPb: 120,
+  letterGap: 96,
+  formW: 720,
+  photoH: 400,
+  photoGap: 32,
+  photosPb: 120,
+  title: 72,
+  lead: 20,
+  phone: 32,
+} as const;
+
+export const CONTACT_FIGMA_SM = {
+  pageX: 20,
+  headerH: 88,
+  heroPt: 28,
+  heroPb: 24,
+  heroGap: 12,
+  formPt: 8,
+  formPb: 56,
+  footerPy: 64,
+  title: 36,
+  lead: 17,
+  formH: 26,
+  ctaH: 56,
+} as const;
+
+export const CONTACT_COPY = {
+  title: 'Talk to us',
+  lead: 'Fill out the form, or call the office closest to you. Either way, a real person gets back to you.',
+  leadSm: 'Tap to call the office closest to you.',
+  form: 'Free case review',
+  california: 'California',
+  nevada: 'Nevada',
+  caPhone: '(949) 555-0148',
+  nvPhone: '(702) 555-0163',
+  irvine: 'Irvine office',
+  henderson: 'Henderson, Nevada',
+  directions: 'Directions',
+  cta: 'Get my free case review',
+  callCa: 'Call California (949) 555-0148',
+  callNv: 'Call Nevada (702) 555-0163',
+} as const;
