@@ -4,8 +4,10 @@ import { fraunces, jost } from './fonts';
 import { AppToaster } from '@/components/feedback/AppToaster';
 
 export const metadata: Metadata = {
-  title: 'Kanopy',
-  description: 'Kanopy',
+  title: 'Olive Legal Group',
+  description:
+    'Personal injury, lemon law and workers’ comp attorneys in California and Nevada.',
+  icons: { icon: '/icon.png' },
 };
 
 export default function RootLayout({

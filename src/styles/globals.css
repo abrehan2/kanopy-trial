@@ -1,50 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "./tokens.css";
+@import "./type.css";
 
 @source "../**/*.{ts,tsx}";
 @source "../../app/**/*.{ts,tsx}";
 @source "../../tests/**/*.{ts,tsx}";
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-destructive: var(--destructive);
-  --color-ink: hsl(150, 5%, 8%);
-  --color-pine: hsl(188, 36%, 18%);
-  --color-stone: hsl(43, 7%, 40%);
-  --font-jost: var(--font-jost-face);
-  --font-heading: var(--font-fraunces-face);
-  --radius-md: var(--radius);
-  --radius-pill: 999px;
-  --spacing-page-x: 64px;
-  --spacing-section-y: 120px;
-  --spacing-header-h: 110px;
-  --spacing-input-h: 52px;
-  --spacing-input-x: 14px;
-  --spacing-nav-cta-x: 22px;
-  --spacing-nav-cta-y: 12px;
-  --spacing-form-gap: 18px;
-  --spacing-field-gap: 8px;
-  --spacing-form-copy: 480px;
-  --text-title: 32px;
-  --text-cta: 18px;
-  --text-label: 15px;
-  --text-micro: 13px;
-}
-
 :root {
-  --background: hsl(41, 28%, 87%);
+  --background: hsl(43, 28%, 87%);
   --foreground: hsl(150, 5%, 8%);
   --card: hsl(0, 0%, 100%);
   --primary: hsl(188, 36%, 18%);
@@ -53,11 +18,15 @@
   --secondary-foreground: hsl(188, 36%, 18%);
   --accent: hsl(42, 26%, 93%);
   --accent-foreground: hsl(188, 36%, 18%);
-  --destructive: hsl(0, 70%, 45%);
-  --border: hsl(40, 12%, 71%);
-  --input: hsl(40, 12%, 71%);
+  --destructive: hsl(4, 70%, 37%);
+  --border: hsl(43, 12%, 71%);
+  --input: hsl(43, 12%, 71%);
   --ring: hsl(188, 36%, 18%);
   --radius: 10px;
+}
+
+@utility page-zoom {
+  zoom: max(1, calc(100vw / var(--container-zoom)));
 }
 
 @layer base {
@@ -69,12 +38,12 @@
     box-sizing: border-box;
   }
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   html {
-    @apply font-jost;
+    @apply overflow-x-clip font-jost;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply min-w-0 overflow-x-clip bg-background text-foreground;
   }
 }
