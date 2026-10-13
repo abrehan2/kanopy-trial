@@ -46,6 +46,23 @@ test.describe('Figma home mobile 390', () => {
     await expect(hero.getByText('California  ·  Nevada')).toBeVisible();
   });
 
+  test('open menu covers the hero copy', async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('button', { name: 'Open menu' }).click();
+    const menu = page.getByTestId('mobile-menu');
+    await expect(menu).toBeVisible();
+    await expectColor(menu, FIGMA.paper);
+    const covered = await page.evaluate(() => {
+      const title = document.querySelector('#top h1');
+      if (!title) return false;
+      const box = title.getBoundingClientRect();
+      const el = document.elementFromPoint(box.left + 24, box.top + 24);
+      return Boolean(el?.closest('[data-testid="mobile-menu"]'));
+    });
+    expect(covered).toBe(true);
+    await expect(menu.getByRole('link', { name: 'Results' })).toBeVisible();
+  });
+
   test('each section matches mobile space, copy, and gutters', async ({ page }) => {
     await page.goto('/');
     await noHorizontalScroll(page);

@@ -1,14 +1,32 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { HomeMenuPanel } from '@/features/home/components/HomeMenuPanel';
+import { lockPageScroll, unlockPageScroll } from '@/features/home/data/lock-page-scroll';
 import type { NavLink } from '@/features/home/data/home';
+import { cn } from '@/lib/utils';
 
 type HomeMenuProps = {
   nav: NavLink[];
+  ctaHref?: string;
 };
 
-export function HomeMenu({ nav }: HomeMenuProps) {
+export function HomeMenu({ nav, ctaHref = '#review-form' }: HomeMenuProps) {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const scrollY = lockPageScroll();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      unlockPageScroll(scrollY);
+    };
+  }, [open]);
 
   return (
     <div className="hidden max-compact:block">
@@ -16,26 +34,28 @@ export function HomeMenu({ nav }: HomeMenuProps) {
         type="button"
         aria-expanded={open}
         aria-label={open ? 'Close menu' : 'Open menu'}
-        className="flex w-menu flex-col gap-1.5"
+        className="relative z-30 flex h-4 w-menu flex-col justify-center"
         onClick={() => setOpen((value) => !value)}
       >
-        <span className="h-0.5 w-full bg-ink" />
-        <span className="h-0.5 w-full bg-ink" />
+        <span
+          className={cn(
+            'absolute h-0.5 w-full bg-ink transition-transform',
+            open ? 'rotate-45' : '-translate-y-1',
+          )}
+        />
+        <span
+          className={cn(
+            'absolute h-0.5 w-full bg-ink transition-transform',
+            open ? '-rotate-45' : 'translate-y-1',
+          )}
+        />
       </button>
-      {open ? (
-        <nav className="absolute top-header-h-sm right-page-x-sm left-page-x-sm z-20 flex flex-col gap-5 bg-hero py-6">
-          {nav.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="font-jost text-cta text-ink"
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      ) : null}
+      {open
+        ? createPortal(
+            <HomeMenuPanel nav={nav} ctaHref={ctaHref} onClose={() => setOpen(false)} />,
+            document.body,
+          )
+        : null}
     </div>
   );
 }

@@ -16,6 +16,7 @@
   --color-pine: hsl(188, 36%, 18%);
   --color-paper: hsl(42, 26%, 93%);
   --color-hero: hsl(41, 26%, 87%);
+  --color-cream: hsl(43, 40%, 87%);
   --color-stone: hsl(43, 7%, 35%);
   --color-dust: hsl(43, 7%, 40%);
   --color-gold: hsl(38, 34%, 49%);
@@ -23,6 +24,7 @@
   --color-moss: hsl(87, 14%, 72%);
   --color-pine-line: hsl(186, 21%, 29%);
   --color-sand: hsl(42, 20%, 74%);
+  --color-header-line: hsl(40, 18%, 81%);
   --color-faq-line: hsl(42, 21%, 81%);
   --color-footer: hsl(184, 32%, 9%);
   --font-jost: var(--font-jost-face);
@@ -39,6 +41,18 @@
   --spacing-section-form: 104px;
   --spacing-section-cta: 80px;
   --spacing-header-h: 110px;
+  --spacing-header-interior: 96px;
+  --spacing-section-mid: 112px;
+  --spacing-pi-hero-pt: 64px;
+  --spacing-pi-hero-pb: 96px;
+  --spacing-pi-hero-pt-sm: 28px;
+  --spacing-pi-hero-pb-sm: 48px;
+  --spacing-pi-photo: 560px;
+  --spacing-pi-photo-h-sm: 220px;
+  --spacing-faq-item-y-pi-sm: 18px;
+  --spacing-state-label: 360px;
+  --spacing-state-row-y: 22px;
+  --spacing-now-aside: 420px;
   --spacing-hero-body: 890px;
   --spacing-hero-img-h: 790px;
   --spacing-hero-fade: 140px;
@@ -70,6 +84,10 @@
   --spacing-office-copy: 520px;
   --spacing-office-img: 640px;
   --spacing-faq-aside: 400px;
+  --spacing-faq-item-y: 24px;
+  --spacing-faq-item-y-pi: 26px;
+  --spacing-faq-answer-gap: 14px;
+  --spacing-faq-answer-gap-pi: 12px;
   --spacing-footer-logo: 260px;
   --spacing-quote: 1040px;
   --spacing-advice-head: 760px;

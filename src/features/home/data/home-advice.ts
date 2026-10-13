@@ -10,7 +10,7 @@ export const HOME_ADVICE: AdviceColumn[] = [
       'Keep every bill and every receipt in one place.',
     ],
     warn: 'Don’t give the other driver’s insurance a recorded statement. You don’t have to.',
-    href: '#review-form',
+    href: '/personal-injury',
     link: 'More about personal injury',
     shortTitle: 'Car crash',
     shortItems: [

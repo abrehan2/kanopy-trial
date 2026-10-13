@@ -36,6 +36,8 @@ export const FIGMA = {
   check: 20,
   micro: 13,
   dust: 'rgb(110, 106, 96)',
+  faqItemY: 24,
+  faqAnswerGap: 14,
 } as const;
 
 export const FIGMA_SM = {

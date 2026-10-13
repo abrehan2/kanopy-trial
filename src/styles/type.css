@@ -26,6 +26,11 @@
   --text-title: 32px;
   --text-case: 30px;
   --text-case--line-height: 38px;
+  --text-case-sm: 26px;
+  --text-case-sm--line-height: 30px;
+  --text-case-sm--letter-spacing: -0.26px;
+  --text-crumb: 15px;
+  --text-crumb--line-height: 23px;
   --text-process: 30px;
   --text-process--line-height: 36px;
   --text-process--letter-spacing: -0.3px;
