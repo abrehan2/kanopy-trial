@@ -140,4 +140,9 @@
   --spacing-guide-meta: 180px;
   --spacing-guide-article-h: 420px;
   --spacing-guide-article-h-sm: 210px;
+  --spacing-not-found-pt: 160px;
+  --spacing-not-found-pb: 200px;
+  --spacing-not-found-pt-sm: 72px;
+  --spacing-not-found-pb-sm: 96px;
+  --spacing-not-found-row-y: 14px;
 }

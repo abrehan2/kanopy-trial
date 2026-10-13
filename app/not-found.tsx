@@ -1,12 +1,11 @@
+import type { Metadata } from 'next';
+import { NotFoundPage } from '@/features/not-found/components/NotFoundPage';
+
+export const metadata: Metadata = {
+  title: 'Page not found | Olive Legal Group',
+  description: 'We can’t find that page. These links will get you where you need to go.',
+};
+
 export default function NotFound() {
-  return (
-    <main className="flex min-h-screen items-center justify-center px-page-x">
-      <div className="text-center">
-        <h1 className="font-heading text-title text-pine">Page not found</h1>
-        <p className="mt-field-gap font-jost text-sm text-stone">
-          The page you requested does not exist.
-        </p>
-      </div>
-    </main>
-  );
+  return <NotFoundPage />;
 }
