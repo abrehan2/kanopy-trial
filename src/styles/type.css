@@ -102,4 +102,10 @@
   --text-bullet--line-height: 25px;
   --text-disc: 12px;
   --text-disc--line-height: 18px;
+  --text-about-hero: 80px;
+  --text-about-hero--line-height: 92px;
+  --text-about-hero--letter-spacing: -0.8px;
+  --text-about-name: 36px;
+  --text-about-name--line-height: 41px;
+  --text-about-name--letter-spacing: -0.36px;
 }

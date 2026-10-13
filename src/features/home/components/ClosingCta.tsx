@@ -1,7 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { PHONE_CA } from '@/features/home/data/home';
 
-export function ClosingCta() {
+type ClosingCtaProps = { ctaHref?: string };
+
+export function ClosingCta({ ctaHref = '#review-form' }: ClosingCtaProps) {
   return (
     <section
       id="closing"
@@ -21,7 +23,7 @@ export function ClosingCta() {
         size="cta"
         className="px-7 max-compact:h-cta-h-sm max-compact:w-full max-compact:px-0 max-compact:text-cta-sm"
       >
-        <a href="#review-form">Get my free case review</a>
+        <a href={ctaHref}>Get my free case review</a>
       </Button>
       <p className="shrink-0 font-jost text-cta whitespace-nowrap text-paper max-compact:hidden">
         or call {PHONE_CA}

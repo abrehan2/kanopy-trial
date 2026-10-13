@@ -116,4 +116,11 @@
   --spacing-menu: 24px;
   --spacing-footer-logo-sm: 73px;
   --spacing-footer-mark: 110px;
+  --spacing-about-hero-pt: 72px;
+  --spacing-about-hero-pb: 64px;
+  --spacing-about-hero-photo: 520px;
+  --spacing-about-portrait-h: 520px;
+  --spacing-about-hero-pb-sm: 40px;
+  --spacing-about-portrait-h-sm: 300px;
+  --spacing-about-attorneys-pt-sm: 24px;
 }
