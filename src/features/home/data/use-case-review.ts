@@ -12,9 +12,12 @@ import {
 import type { CaseReviewValues } from '@/features/home/schemas/case-review';
 import { showError, showErrorFrom, showSuccess } from '@/lib/toast';
 
-export function useCaseReviewSubmit() {
+type UseCaseReviewSubmitOptions = { toast?: boolean };
+
+export function useCaseReviewSubmit(options?: UseCaseReviewSubmitOptions) {
   const [saving, setSaving] = useState(false);
   const { secondsLeft, start } = useCaseReviewCooldown();
+  const toast = options?.toast ?? true;
 
   const submit = async (values: CaseReviewValues) => {
     const wait = getSecondsRemaining(REVIEW_COOLDOWN_KEY, REVIEW_COOLDOWN);
@@ -26,7 +29,7 @@ export function useCaseReviewSubmit() {
     try {
       await sendCaseReview(values);
       start();
-      showSuccess('We’ll call you back shortly.');
+      if (toast) showSuccess('We’ll call you back shortly.');
       return true;
     } catch (error) {
       const message = error instanceof Error ? error.message : '';

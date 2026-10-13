@@ -16,6 +16,8 @@ import {
   type CaseReviewValues,
 } from '@/features/home/schemas/case-review';
 
+type CaseReviewFormProps = { onSuccess?: (values: CaseReviewValues) => void };
+
 const EMPTY: CaseReviewValues = {
   firstName: '',
   lastName: '',
@@ -27,8 +29,8 @@ const EMPTY: CaseReviewValues = {
   sms: false,
 };
 
-export function CaseReviewForm() {
-  const { submit, saving, secondsLeft } = useCaseReviewSubmit();
+export function CaseReviewForm({ onSuccess }: CaseReviewFormProps) {
+  const { submit, saving, secondsLeft } = useCaseReviewSubmit({ toast: !onSuccess });
   const {
     register,
     control,
@@ -49,7 +51,9 @@ export function CaseReviewForm() {
       autoCapitalize="off"
       spellCheck={false}
       onSubmit={handleSubmit(async (values) => {
-        if (await submit(values)) reset();
+        if (!(await submit(values))) return;
+        reset();
+        onSuccess?.(values);
       })}
     >
       {/* Decoy fields so Chrome address autofill binds here instead of real inputs */}

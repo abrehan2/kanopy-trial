@@ -1,8 +1,8 @@
 import { ContactCalls } from '@/features/contact/components/ContactCalls';
 import { ContactOffice } from '@/features/contact/components/ContactOffice';
+import { ContactReviewForm } from '@/features/contact/components/ContactReviewForm';
 import { CONTACT_PAGE } from '@/features/contact/data/contact-copy';
 import type { ContactOffice as ContactOfficeModel } from '@/features/contact/data/contact-offices';
-import { CaseReviewForm } from '@/features/home/components/CaseReviewForm';
 import { HomeHeader } from '@/features/home/components/HomeHeader';
 import type { NavLink } from '@/features/home/data/home';
 
@@ -37,7 +37,7 @@ export function ContactHero({ nav, offices }: ContactHeroProps) {
           id="review-form"
           className="w-contact-form shrink-0 max-compact:w-full max-compact:px-page-x-sm max-compact:pt-2 max-compact:pb-section-sm"
         >
-          <CaseReviewForm />
+          <ContactReviewForm />
         </div>
       </div>
     </div>

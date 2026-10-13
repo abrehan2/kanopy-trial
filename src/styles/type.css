@@ -111,4 +111,9 @@
   --text-results-hero: 72px;
   --text-results-hero--line-height: 83px;
   --text-results-hero--letter-spacing: -0.72px;
+  --text-thanks: 64px;
+  --text-thanks--line-height: 74px;
+  --text-thanks--letter-spacing: -0.64px;
+  --text-thanks-lead: 22px;
+  --text-thanks-lead--line-height: 34px;
 }
