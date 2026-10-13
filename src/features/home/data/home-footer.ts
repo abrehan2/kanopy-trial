@@ -6,7 +6,7 @@ export const HOME_FOOTER: FooterCol[] = [
     lines: [
       { label: 'Personal injury', href: '/personal-injury' },
       { label: 'Lemon law', href: '/lemon-law' },
-      { label: 'Workers’ compensation' },
+      { label: 'Workers’ compensation', href: '/workers-comp' },
     ],
   },
   {

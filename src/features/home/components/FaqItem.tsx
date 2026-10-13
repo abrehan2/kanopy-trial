@@ -33,11 +33,13 @@ export function FaqItem({
         practice
           ? 'py-faq-item-y-pi max-compact:py-faq-item-y-pi-sm'
           : 'py-faq-item-y',
-        open && (practice ? 'gap-faq-answer-gap-pi' : 'gap-faq-answer-gap'),
-        open && !compactOpen && 'max-compact:gap-0',
+        open && (practice ? 'compact:gap-faq-answer-gap-pi' : 'compact:gap-faq-answer-gap'),
+        compactOpen &&
+          (practice ? 'max-compact:gap-faq-answer-gap-pi' : 'max-compact:gap-faq-answer-gap'),
         line === 'pine' ? 'border-pine' : 'border-faq-line',
-        bordered === 'both' ? 'border-y' : 'border-b',
-        practice && 'max-compact:border-b-0 max-compact:border-t',
+        practice && 'max-compact:border-t max-compact:border-b-0',
+        practice && (bordered === 'both' ? 'compact:border-y' : 'compact:border-b'),
+        !practice && (bordered === 'both' ? 'border-y' : 'border-b'),
         hiddenOnCompact && 'max-compact:hidden',
       )}
     >
@@ -65,10 +67,14 @@ export function FaqItem({
           {compactOpen ? '−' : '+'}
         </span>
       </button>
-      {open ? (
+      {open || compactOpen ? (
         <p
           data-testid="faq-answer"
-          className={cn('font-jost text-body text-ink/80', !compactOpen && 'max-compact:hidden')}
+          className={cn(
+            'hidden font-jost text-body text-ink/80',
+            open && 'compact:block',
+            compactOpen && 'max-compact:block',
+          )}
         >
           {item.answer}
         </p>

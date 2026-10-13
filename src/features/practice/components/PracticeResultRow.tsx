@@ -36,7 +36,7 @@ export function PracticeResultRow({ row }: PracticeResultRowProps) {
               row.offerStrike && 'line-through',
             )}
           >
-            {row.offer}
+            {row.offerSm ?? row.offer}
           </p>
         )}
       </div>

@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { fraunces, jost } from './fonts';
 import { AppToaster } from '@/components/feedback/AppToaster';
+import { PageSpinner } from '@/components/feedback/PageSpinner';
 
 export const metadata: Metadata = {
   title: 'Olive Legal Group',
@@ -22,6 +23,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <PageSpinner />
         <AppToaster />
       </body>
     </html>

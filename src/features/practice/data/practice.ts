@@ -24,6 +24,7 @@ export type PracticeResult = {
   shortTitle: string;
   offerLabel: string;
   offer: string;
+  offerSm?: string;
   offerStrike?: boolean;
   offerSmall?: boolean;
   hideOfferOnCompact?: boolean;

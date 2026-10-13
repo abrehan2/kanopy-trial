@@ -13,7 +13,7 @@ export function PracticeFaqSection({ faq }: PracticeFaqSectionProps) {
   return (
     <section
       id="faq"
-      className="flex min-w-0 items-start gap-letter-gap overflow-x-clip bg-paper px-page-x py-section-y max-compact:flex-col max-compact:gap-0 max-compact:px-page-x-sm max-compact:pt-section-sm max-compact:pb-10"
+      className="flex min-w-0 items-start gap-letter-gap overflow-x-clip bg-paper px-page-x pt-section-y pb-section-y max-compact:flex-col max-compact:items-stretch max-compact:gap-0 max-compact:px-page-x-sm max-compact:pt-section-sm max-compact:pb-10"
     >
       <div className="w-faq-aside shrink-0 max-compact:w-full max-compact:pb-3">
         <h2 className="font-heading text-quote font-normal text-pine max-compact:hidden">
@@ -23,7 +23,7 @@ export function PracticeFaqSection({ faq }: PracticeFaqSectionProps) {
           Questions
         </h2>
       </div>
-      <div className="flex min-w-px flex-1 flex-col">
+      <div className="flex min-w-px flex-1 flex-col max-compact:w-full max-compact:min-w-0">
         {faq.map((item, index) => (
           <FaqItem
             key={item.question}

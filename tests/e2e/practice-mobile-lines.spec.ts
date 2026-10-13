@@ -31,6 +31,8 @@ async function assertFaqClosed(page: Page) {
   for (let i = 0; i < (await items.count()); i += 1) {
     await expect(items.nth(i)).toHaveAttribute('data-compact-open', 'false');
   }
+  const heading = faq.getByRole('heading', { name: 'Questions' });
+  expect(Math.round((await box(items.first())).width)).toBe(Math.round((await box(heading)).width));
   expect(await px(items.first(), 'border-top-width')).toBe(1);
   expect(await px(last, 'border-bottom-width')).toBe(0);
   expect(await px(faq, 'padding-bottom')).toBe(LEMON_FIGMA_SM.faqPb);
@@ -52,6 +54,12 @@ test.describe('Figma practice mobile lines', () => {
   test('lemon law now rules and faq space match the frame', async ({ page }) => {
     await page.goto('/lemon-law');
     await assertNowLines(page, 'If your car keeps breaking down');
+    await assertFaqClosed(page);
+  });
+
+  test('workers’ comp now rules and faq space match the frame', async ({ page }) => {
+    await page.goto('/workers-comp');
+    await assertNowLines(page, 'If you just got hurt at work');
     await assertFaqClosed(page);
   });
 });

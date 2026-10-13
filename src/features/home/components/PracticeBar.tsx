@@ -1,6 +1,7 @@
 const PRACTICE_HREF: Record<string, string> = {
   'Personal injury': '/personal-injury',
   'Lemon law': '/lemon-law',
+  'Workers’ compensation': '/workers-comp',
 };
 
 type PracticeBarProps = {

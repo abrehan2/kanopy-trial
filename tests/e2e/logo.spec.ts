@@ -3,7 +3,8 @@ import { expect, test } from '@playwright/test';
 test.describe('Brand logo assets', () => {
   test('header logo is a transparent SVG on paper', async ({ page }) => {
     await page.goto('/personal-injury');
-    const logo = page.getByTestId('logo-horizontal');
+    const logo = page.locator('header').getByTestId('logo-horizontal');
+    await expect(page.getByTestId('logo-spinner')).toHaveCount(0);
     await expect(logo).toBeVisible();
     await expect(logo).toHaveAttribute('src', /logo-horizontal\.svg/);
     const box = await logo.boundingBox();

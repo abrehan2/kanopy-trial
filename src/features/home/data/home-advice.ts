@@ -42,7 +42,7 @@ export const HOME_ADVICE: AdviceColumn[] = [
       'Write down who saw it happen.',
     ],
     warn: 'Don’t wait. In Nevada you have 7 days to report it, in California 30.',
-    href: '#review-form',
+    href: '/workers-comp',
     link: 'More about workers’ comp',
     shortTitle: 'Hurt at work',
     shortItems: [],
