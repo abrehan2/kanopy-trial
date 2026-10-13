@@ -1,0 +1,15 @@
+export const PI_PAGE = {
+  crumb: 'Personal injury',
+  title: 'Hurt by someone else? We deal with their insurer.',
+  lead: 'Car crashes, falls, dog bites and more, in California and Nevada. You focus on getting better.',
+  leadSm: 'You focus on getting better.',
+  photoAlt: 'Evening freeway traffic in Southern California',
+  casesTitle: 'Cases we take',
+  resultsTitle: 'What the insurance company offered.\nWhat our clients got.',
+  resultsTitleSm: 'What insurance offered vs. what we got',
+  nowTitle: 'If it just happened',
+  nowLead: 'Whether or not you ever call us.',
+  statesTitle: 'California and Nevada are different',
+  statesTitleSm: 'California vs. Nevada',
+  statesLead: 'Where it happened decides which rules apply.',
+} as const;

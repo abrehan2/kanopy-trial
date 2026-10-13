@@ -27,14 +27,17 @@ export function FaqItem({
     <div
       data-testid="faq-item"
       data-open={open ? 'true' : 'false'}
+      data-compact-open={compactOpen ? 'true' : 'false'}
       className={cn(
         'flex w-full flex-col',
         practice
           ? 'py-faq-item-y-pi max-compact:py-faq-item-y-pi-sm'
           : 'py-faq-item-y',
         open && (practice ? 'gap-faq-answer-gap-pi' : 'gap-faq-answer-gap'),
+        open && !compactOpen && 'max-compact:gap-0',
         line === 'pine' ? 'border-pine' : 'border-faq-line',
         bordered === 'both' ? 'border-y' : 'border-b',
+        practice && 'max-compact:border-b-0 max-compact:border-t',
         hiddenOnCompact && 'max-compact:hidden',
       )}
     >

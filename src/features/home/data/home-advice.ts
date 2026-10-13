@@ -28,7 +28,7 @@ export const HOME_ADVICE: AdviceColumn[] = [
       'Don’t sell or trade it in yet.',
     ],
     warn: 'Don’t pay for repairs that should be covered by the warranty.',
-    href: '#review-form',
+    href: '/lemon-law',
     link: 'More about lemon law',
     shortTitle: 'Car keeps breaking down',
     shortItems: [],

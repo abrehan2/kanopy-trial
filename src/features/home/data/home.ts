@@ -43,7 +43,9 @@ export type OfficeCard = {
 
 export type FaqItem = { question: string; answer: string };
 
-export type FooterCol = { title: string; lines: string[] };
+export type FooterLine = { label: string; href?: string };
+
+export type FooterCol = { title: string; lines: FooterLine[] };
 
 export type HomeView = {
   nav: NavLink[];
