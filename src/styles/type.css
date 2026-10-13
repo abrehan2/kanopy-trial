@@ -116,4 +116,9 @@
   --text-thanks--letter-spacing: -0.64px;
   --text-thanks-lead: 22px;
   --text-thanks-lead--line-height: 34px;
+  --text-guide-title: 56px;
+  --text-guide-title--line-height: 64px;
+  --text-guide-title--letter-spacing: -0.56px;
+  --text-guide-body: 21px;
+  --text-guide-body--line-height: 35px;
 }

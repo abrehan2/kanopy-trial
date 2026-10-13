@@ -3,7 +3,8 @@ import { GUIDES_FEATURED } from '@/features/guides/data/guides-copy';
 
 export function GuidesFeatured() {
   return (
-    <article
+    <a
+      href={GUIDES_FEATURED.href}
       data-testid="guides-featured"
       className="flex min-w-0 items-center gap-16 overflow-x-clip px-page-x pt-8 pb-16 max-compact:flex-col max-compact:items-stretch max-compact:gap-2.5 max-compact:px-page-x-sm max-compact:pt-4 max-compact:pb-6"
     >
@@ -28,6 +29,6 @@ export function GuidesFeatured() {
         height={400}
         className="h-contact-photo-h w-guide-photo shrink-0 rounded-sm object-cover max-compact:order-first max-compact:h-guide-photo-h-sm max-compact:w-full"
       />
-    </article>
+    </a>
   );
 }

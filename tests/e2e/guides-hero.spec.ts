@@ -41,6 +41,7 @@ test.describe('Figma guides hero', () => {
       featured.getByRole('heading', { name: GUIDES_COPY.featured }),
       GUIDES_FIGMA.featuredTitle,
     );
+    await expect(featured).toHaveAttribute('href', '/guides/no-problem-found');
   });
 
   test('filters the list and hides featured when it does not match', async ({ page }) => {
@@ -65,5 +66,12 @@ test.describe('Figma guides hero', () => {
     await page.goto('/');
     await page.locator('footer').getByRole('link', { name: 'Guides' }).click();
     await expect(page).toHaveURL(/\/guides/);
+  });
+
+  test('featured story opens the article', async ({ page }) => {
+    await page.goto('/guides');
+    await page.getByTestId('guides-featured').click();
+    await expect(page).toHaveURL(/\/guides\/no-problem-found/);
+    await expect(page.getByRole('heading', { name: GUIDES_COPY.featured })).toBeVisible();
   });
 });
