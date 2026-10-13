@@ -4,7 +4,7 @@ import { toLemonView } from '@/features/lemon-law/data/lemon-map';
 describe('toLemonView', () => {
   test('maps every lemon law section from the frame copy', () => {
     const view = toLemonView();
-    expect(view.nav).toHaveLength(4);
+    expect(view.nav).toHaveLength(5);
     expect(view.casesLeft).toHaveLength(3);
     expect(view.casesRight).toHaveLength(3);
     expect(view.results).toHaveLength(3);

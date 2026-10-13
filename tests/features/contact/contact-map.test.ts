@@ -4,7 +4,7 @@ import { toContactView } from '@/features/contact/data/contact-map';
 describe('toContactView', () => {
   test('maps offices, photos, and footer contact link from the frame', () => {
     const view = toContactView();
-    expect(view.nav).toHaveLength(4);
+    expect(view.nav).toHaveLength(5);
     expect(view.offices).toHaveLength(2);
     expect(view.photos).toHaveLength(2);
     expect(view.offices[0]?.state).toBe('California');

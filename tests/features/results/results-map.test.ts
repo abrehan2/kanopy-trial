@@ -4,7 +4,7 @@ import { toResultsView } from '@/features/results/data/results-map';
 describe('toResultsView', () => {
   test('maps every results section from the frame copy', () => {
     const view = toResultsView();
-    expect(view.nav).toHaveLength(4);
+    expect(view.nav).toHaveLength(5);
     expect(view.cases).toHaveLength(9);
     expect(view.reviews).toHaveLength(4);
     expect(view.cases.filter((row) => row.category === 'lemon-law')).toHaveLength(3);

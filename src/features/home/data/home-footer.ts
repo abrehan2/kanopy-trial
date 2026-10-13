@@ -13,6 +13,7 @@ export const HOME_FOOTER: FooterCol[] = [
     title: 'Firm',
     lines: [
       { label: 'Results', href: '/results' },
+      { label: 'Guides', href: '/guides' },
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
     ],

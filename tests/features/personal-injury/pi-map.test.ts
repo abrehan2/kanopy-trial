@@ -4,7 +4,7 @@ import { toPiView } from '@/features/personal-injury/data/pi-map';
 describe('toPiView', () => {
   test('maps every personal injury section from the frame copy', () => {
     const view = toPiView();
-    expect(view.nav).toHaveLength(4);
+    expect(view.nav).toHaveLength(5);
     expect(view.casesLeft).toHaveLength(3);
     expect(view.casesRight).toHaveLength(3);
     expect(view.results).toHaveLength(3);

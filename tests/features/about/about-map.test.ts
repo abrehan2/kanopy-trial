@@ -4,7 +4,7 @@ import { toAboutView } from '@/features/about/data/about-map';
 describe('toAboutView', () => {
   test('maps every about section from the frame copy', () => {
     const view = toAboutView();
-    expect(view.nav).toHaveLength(4);
+    expect(view.nav).toHaveLength(5);
     expect(view.attorneys).toHaveLength(2);
     expect(view.promises).toHaveLength(3);
     expect(view.offices).toHaveLength(2);

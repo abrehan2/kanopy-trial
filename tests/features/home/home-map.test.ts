@@ -4,7 +4,7 @@ import { toHomeView } from '@/features/home/data/home-map';
 describe('toHomeView', () => {
   test('maps every home section from the frame copy', () => {
     const view = toHomeView();
-    expect(view.nav).toHaveLength(4);
+    expect(view.nav).toHaveLength(5);
     expect(view.practices).toHaveLength(4);
     expect(view.results).toHaveLength(3);
     expect(view.advice).toHaveLength(3);
