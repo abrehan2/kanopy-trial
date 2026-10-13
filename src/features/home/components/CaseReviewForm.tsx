@@ -8,6 +8,7 @@ import { CaseReviewField } from '@/features/home/components/CaseReviewField';
 import { CaseReviewHeading } from '@/features/home/components/CaseReviewHeading';
 import { ContactRow, NameRow, SmsConsent } from '@/features/home/components/CaseReviewRows';
 import { CaseReviewSelects } from '@/features/home/components/CaseReviewSelects';
+import { reviewSubmitLabel } from '@/features/home/data/case-review-timer';
 import { useCaseReviewSubmit } from '@/features/home/data/use-case-review';
 import {
   caseReviewT,
@@ -27,7 +28,7 @@ const EMPTY: CaseReviewValues = {
 };
 
 export function CaseReviewForm() {
-  const { submit, saving } = useCaseReviewSubmit();
+  const { submit, saving, secondsLeft } = useCaseReviewSubmit();
   const {
     register,
     control,
@@ -48,8 +49,7 @@ export function CaseReviewForm() {
       autoCapitalize="off"
       spellCheck={false}
       onSubmit={handleSubmit(async (values) => {
-        await submit(values);
-        reset();
+        if (await submit(values)) reset();
       })}
     >
       {/* Decoy fields so Chrome address autofill binds here instead of real inputs */}
@@ -71,8 +71,8 @@ export function CaseReviewForm() {
         />
       </CaseReviewField>
       <SmsConsent control={control} />
-      <Button type="submit" variant="pine" size="form" disabled={saving}>
-        {saving ? 'Sending…' : 'Get my free case review'}
+      <Button type="submit" variant="pine" size="form" disabled={saving || secondsLeft > 0}>
+        {reviewSubmitLabel(saving, secondsLeft)}
       </Button>
       <p className="w-full text-center font-jost text-micro text-dust">
         Confidential. Sending this doesn’t create an attorney–client relationship.

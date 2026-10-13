@@ -24,6 +24,26 @@ vi.mock('next/navigation', () => ({
   useSearchParams: () => new URLSearchParams(),
 }));
 
+if (typeof globalThis.localStorage === 'undefined' || !globalThis.localStorage) {
+  const memory = new Map<string, string>();
+  globalThis.localStorage = {
+    getItem: (key) => memory.get(key) ?? null,
+    setItem: (key, value) => {
+      memory.set(key, String(value));
+    },
+    removeItem: (key) => {
+      memory.delete(key);
+    },
+    clear: () => {
+      memory.clear();
+    },
+    key: (index) => [...memory.keys()][index] ?? null,
+    get length() {
+      return memory.size;
+    },
+  };
+}
+
 if (typeof globalThis.ResizeObserver === 'undefined') {
   globalThis.ResizeObserver = class {
     observe() {}

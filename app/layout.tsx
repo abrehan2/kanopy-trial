@@ -16,8 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${jost.variable} ${fraunces.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${jost.variable} ${fraunces.variable} antialiased`}
+        suppressHydrationWarning
+      >
         {children}
         <AppToaster />
       </body>
