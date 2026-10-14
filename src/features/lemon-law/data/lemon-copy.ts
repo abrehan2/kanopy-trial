@@ -1,3 +1,5 @@
+import { SITE_MEDIA } from '@/lib/site-media';
+
 export const LEMON_PAGE = {
   crumb: 'Lemon law',
   title: 'Car keeps going back to the shop? You may be owed a refund.',
@@ -16,5 +18,5 @@ export const LEMON_PAGE = {
 } as const;
 
 export const LEMON_ASSETS = {
-  shop: '/images/lemon-shop.jpg',
+  shop: SITE_MEDIA.lemonShop,
 } as const;

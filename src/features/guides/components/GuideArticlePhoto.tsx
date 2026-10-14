@@ -1,4 +1,4 @@
-import { AppImage } from '@/components/media/AppImage';
+import { GuidePhoto } from '@/features/guides/components/GuidePhoto';
 
 type GuideArticlePhotoProps = { src: string; alt: string };
 
@@ -6,7 +6,7 @@ export function GuideArticlePhoto({ src, alt }: GuideArticlePhotoProps) {
   return (
     <>
       <div className="h-2 w-2.5 max-compact:hidden" aria-hidden />
-      <AppImage
+      <GuidePhoto
         src={src}
         alt={alt}
         width={720}

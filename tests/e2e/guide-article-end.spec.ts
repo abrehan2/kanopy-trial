@@ -8,7 +8,6 @@ test.describe('Figma guide article end sections', () => {
     const article = page.getByTestId('guide-article');
     await expect(article.getByRole('heading', { name: ARTICLE_COPY.why })).toBeVisible();
     await expect(article.getByRole('heading', { name: ARTICLE_COPY.next })).toBeVisible();
-    await expect(article.getByRole('heading', { name: ARTICLE_COPY.lawyer })).toBeVisible();
     await expect(article.getByText(ARTICLE_COPY.firstBullet)).toBeVisible();
     await expect(article.getByText(ARTICLE_COPY.lastBullet)).toBeVisible();
     await expectFontSize(article.getByText(ARTICLE_COPY.firstBullet), ARTICLE_FIGMA.body);

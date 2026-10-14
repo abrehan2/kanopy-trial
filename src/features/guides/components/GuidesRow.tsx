@@ -1,11 +1,12 @@
 import { cn } from '@/lib/utils';
-import type { GuideArticle } from '@/features/guides/data/guides-articles';
+import type { GuideArticle } from '@/features/guides/data/guides-types';
 
 type GuidesRowProps = { article: GuideArticle; hiddenOnCompact?: boolean };
 
 export function GuidesRow({ article, hiddenOnCompact = false }: GuidesRowProps) {
   return (
-    <article
+    <a
+      href={article.href}
       data-testid="guides-row"
       className={cn(
         'flex w-full items-start gap-12 border-t border-faq-line py-8',
@@ -27,6 +28,6 @@ export function GuidesRow({ article, hiddenOnCompact = false }: GuidesRowProps) 
         <p>{article.read}</p>
       </div>
       <p className="hidden font-jost text-legal text-stone max-compact:block">{article.read}</p>
-    </article>
+    </a>
   );
 }

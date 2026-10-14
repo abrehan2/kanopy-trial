@@ -1,6 +1,6 @@
-import type { GUIDE_ARTICLE } from '@/features/guides/data/guide-article-copy';
+import type { GuideArticleDetail } from '@/features/guides/data/guides-types';
 
-type GuideArticleHeadProps = { article: typeof GUIDE_ARTICLE };
+type GuideArticleHeadProps = { article: GuideArticleDetail };
 
 export function GuideArticleHead({ article }: GuideArticleHeadProps) {
   return (

@@ -1,3 +1,5 @@
+import { SITE_MEDIA } from '@/lib/site-media';
+
 export const WC_PAGE = {
   crumb: 'Workers’ comp',
   title: 'Hurt at work? You should still get paid.',
@@ -15,5 +17,5 @@ export const WC_PAGE = {
 } as const;
 
 export const WC_ASSETS = {
-  warehouse: '/images/wc-warehouse.jpg',
+  warehouse: SITE_MEDIA.warehouse,
 } as const;

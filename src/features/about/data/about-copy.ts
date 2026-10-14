@@ -1,3 +1,5 @@
+import { SITE_MEDIA } from '@/lib/site-media';
+
 export const ABOUT_PAGE = {
   title: 'A small firm,\non purpose.',
   titleSm: 'A small firm, on purpose.',
@@ -11,7 +13,7 @@ export const ABOUT_PAGE = {
 } as const;
 
 export const ABOUT_ASSETS = {
-  hero: '/images/about-hero.jpg',
-  ludmila: '/images/about-ludmila.jpg',
-  eric: '/images/about-eric.jpg',
+  hero: SITE_MEDIA.aboutHero,
+  ludmila: SITE_MEDIA.ludmila,
+  eric: SITE_MEDIA.eric,
 } as const;

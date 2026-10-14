@@ -1,5 +1,6 @@
+import { loadGuideEntries } from '@/features/guides/data/guides-api';
 import { toGuidesView } from '@/features/guides/data/guides-map';
 
-export function getGuidesView() {
-  return toGuidesView();
+export async function getGuidesView() {
+  return toGuidesView(await loadGuideEntries());
 }

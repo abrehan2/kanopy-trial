@@ -1,3 +1,5 @@
+import { SITE_MEDIA } from '@/lib/site-media';
+
 export const CONTACT_PAGE = {
   title: 'Talk to us',
   lead: 'Fill out the form, or call the office closest to you. Either way, a real person gets back to you.',
@@ -8,6 +10,6 @@ export const CONTACT_PAGE = {
 } as const;
 
 export const CONTACT_ASSETS = {
-  irvine: '/images/contact-irvine.jpg',
-  henderson: '/images/contact-henderson.jpg',
+  irvine: SITE_MEDIA.irvine,
+  henderson: SITE_MEDIA.henderson,
 } as const;

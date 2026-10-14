@@ -8,7 +8,7 @@ import { ClosingCta } from '@/features/home/components/ClosingCta';
 import { HomeFooter } from '@/features/home/components/HomeFooter';
 import type { getGuideArticleView } from '@/features/guides/data/use-guide-article';
 
-type GuideView = NonNullable<ReturnType<typeof getGuideArticleView>>;
+type GuideView = NonNullable<Awaited<ReturnType<typeof getGuideArticleView>>>;
 type GuideArticlePageProps = { view: GuideView };
 
 export function GuideArticlePage({ view }: GuideArticlePageProps) {

@@ -1,5 +1,5 @@
 import { GuidesRow } from '@/features/guides/components/GuidesRow';
-import type { GuideArticle } from '@/features/guides/data/guides-articles';
+import type { GuideArticle } from '@/features/guides/data/guides-types';
 
 type GuidesListProps = { articles: GuideArticle[]; hideCompactTail?: boolean };
 
@@ -11,7 +11,7 @@ export function GuidesList({ articles, hideCompactTail = false }: GuidesListProp
     >
       {articles.map((article) => (
         <GuidesRow
-          key={article.title}
+          key={article.slug}
           article={article}
           hiddenOnCompact={hideCompactTail && article.hideOnCompact}
         />

@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
-import type { GUIDE_ARTICLE } from '@/features/guides/data/guide-article-copy';
+import type { GuideArticleDetail } from '@/features/guides/data/guides-types';
 
-type GuideArticleCalloutProps = { article: typeof GUIDE_ARTICLE };
+type GuideArticleCalloutProps = { article: GuideArticleDetail };
 
 export function GuideArticleCallout({ article }: GuideArticleCalloutProps) {
   return (

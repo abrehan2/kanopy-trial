@@ -1,7 +1,6 @@
 import { GuideArticleBullet } from '@/features/guides/components/GuideArticleBullet';
-import type { GUIDE_ARTICLE_SECTIONS } from '@/features/guides/data/guide-article-body';
+import type { GuideSection } from '@/features/guides/data/guides-types';
 
-type GuideSection = (typeof GUIDE_ARTICLE_SECTIONS)[number];
 type GuideArticleSectionProps = { section: GuideSection };
 
 export function GuideArticleSection({ section }: GuideArticleSectionProps) {

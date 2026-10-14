@@ -1,7 +1,8 @@
 import { GuideRelatedRow } from '@/features/guides/components/GuideRelatedRow';
-import { GUIDE_ARTICLE, type GUIDE_RELATED } from '@/features/guides/data/guide-article-copy';
+import { GUIDE_ARTICLE } from '@/features/guides/data/guide-article-copy';
 
-type GuideArticleRelatedProps = { items: typeof GUIDE_RELATED };
+type RelatedItem = { categoryLabel: string; title: string; href: string };
+type GuideArticleRelatedProps = { items: readonly RelatedItem[] };
 
 export function GuideArticleRelated({ items }: GuideArticleRelatedProps) {
   return (
@@ -11,7 +12,12 @@ export function GuideArticleRelated({ items }: GuideArticleRelatedProps) {
       </h2>
       <div className="h-3 w-2.5" aria-hidden />
       {items.map((item) => (
-        <GuideRelatedRow key={item.title} categoryLabel={item.categoryLabel} title={item.title} />
+        <GuideRelatedRow
+          key={item.href}
+          categoryLabel={item.categoryLabel}
+          title={item.title}
+          href={item.href}
+        />
       ))}
     </section>
   );

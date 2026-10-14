@@ -22,15 +22,14 @@ test.describe('Figma guides mobile 390 sections', () => {
     expect(await px(list, 'padding-bottom')).toBe(GUIDES_FIGMA_SM.listPb);
 
     const rows = list.getByTestId('guides-row');
-    await expect(rows).toHaveCount(6);
+    await expect(rows).toHaveCount(3);
     await expect(rows.first().getByRole('heading')).toHaveText(GUIDES_COPY.firstTitle);
-    await expect(rows.nth(4).getByRole('heading')).toHaveText(GUIDES_COPY.lastTitleSm);
-    await expect(rows.last()).toBeHidden();
+    await expect(rows.last().getByRole('heading')).toHaveText(GUIDES_COPY.lastTitleSm);
+    await expect(rows.last()).toBeVisible();
     expect(await px(rows.first(), 'padding-top')).toBe(GUIDES_FIGMA_SM.rowY);
 
     await page.getByRole('tab', { name: 'Work' }).click();
-    await expect(page.getByTestId('guides-featured')).toHaveCount(0);
-    await expect(list.getByTestId('guides-row')).toHaveCount(2);
+    await expect(list.getByTestId('guides-row')).toHaveCount(1);
     await expect(list.getByRole('heading', { name: GUIDES_COPY.lastTitle })).toBeVisible();
 
     const closing = page.locator('#closing');

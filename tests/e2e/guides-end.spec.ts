@@ -10,9 +10,9 @@ test.describe('Figma guides end sections', () => {
     expect(await px(list, 'padding-bottom')).toBe(GUIDES_FIGMA.listPb);
 
     const rows = page.getByTestId('guides-row');
-    await expect(rows).toHaveCount(6);
+    await expect(rows).toHaveCount(3);
     await expect(rows.first().getByRole('heading')).toHaveText(GUIDES_COPY.firstTitle);
-    await expect(rows.last().getByRole('heading')).toHaveText(GUIDES_COPY.lastTitle);
+    await expect(rows.last().getByRole('heading')).toHaveText(GUIDES_COPY.lastTitleSm);
     expect(await px(rows.first(), 'padding-top')).toBe(GUIDES_FIGMA.rowY);
     expect(await px(rows.first(), 'column-gap')).toBe(GUIDES_FIGMA.rowGap);
     await expectFontSize(rows.first().getByRole('heading'), 28);

@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 import { GuideArticleSection } from '@/features/guides/components/GuideArticleSection';
-import type { GUIDE_ARTICLE_SECTIONS } from '@/features/guides/data/guide-article-body';
+import type { GuideSection } from '@/features/guides/data/guides-types';
 
 type GuideArticleBodyProps = {
   lead: string;
-  sections: typeof GUIDE_ARTICLE_SECTIONS;
+  sections: readonly GuideSection[];
 };
 
 export function GuideArticleBody({ lead, sections }: GuideArticleBodyProps) {

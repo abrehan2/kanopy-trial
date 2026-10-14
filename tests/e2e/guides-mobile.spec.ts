@@ -39,7 +39,7 @@ test.describe('Figma guides mobile 390 hero', () => {
     await expect(menu).toBeHidden();
   });
 
-  test('hero and featured match the mobile frame', async ({ page }) => {
+  test('hero and list match the mobile frame', async ({ page }) => {
     await page.goto('/guides');
     await noHorizontalScroll(page);
 
@@ -65,16 +65,8 @@ test.describe('Figma guides mobile 390 hero', () => {
     await expect(filters.getByRole('tab', { name: 'Work' })).toBeVisible();
     await expect(filters.getByText('Personal injury')).toBeHidden();
 
-    const featured = page.getByTestId('guides-featured');
-    await expect(featured.getByRole('heading', { name: GUIDES_COPY.featured })).toBeVisible();
-    await expect(featured.getByText(GUIDES_COPY.featuredRead, { exact: true })).toBeVisible();
-    expect(await px(featured, 'padding-top')).toBe(GUIDES_FIGMA_SM.featuredPt);
-    expect(await px(featured, 'padding-bottom')).toBe(GUIDES_FIGMA_SM.featuredPb);
-    await expectPadX(featured, GUIDES_FIGMA_SM.pageX);
-    expect(await px(featured.locator('img'), 'height')).toBe(GUIDES_FIGMA_SM.photoH);
-    await expectFontSize(
-      featured.getByRole('heading', { name: GUIDES_COPY.featured }),
-      GUIDES_FIGMA_SM.featuredTitle,
-    );
+    const rows = page.getByTestId('guides-row');
+    await expect(rows).toHaveCount(3);
+    await expect(rows.first().getByRole('heading')).toHaveText(GUIDES_COPY.firstTitle);
   });
 });

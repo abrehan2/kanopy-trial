@@ -1,4 +1,5 @@
 import type { NavLink } from '@/features/home/data/home';
+import { SITE_MEDIA } from '@/lib/site-media';
 
 export const PI_NAV: NavLink[] = [
   { href: '#cases', label: 'Practice areas' },
@@ -9,5 +10,5 @@ export const PI_NAV: NavLink[] = [
 ];
 
 export const PI_ASSETS = {
-  freeway: '/images/pi-freeway.jpg',
+  freeway: SITE_MEDIA.freeway,
 } as const;

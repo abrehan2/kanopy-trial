@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test';
-import { expectColor, expectFontSize, expectGap, expectPadX, px } from './style';
+import { expectColor, expectFontSize, expectPadX, px } from './style';
 import { GUIDES_COPY, GUIDES_FIGMA } from './guides-figma-spec';
 
 test.describe('Figma guides hero', () => {
-  test('matches interior header, copy, filters, and featured story', async ({ page }) => {
+  test('matches interior header, copy, filters, and the Contentful list', async ({ page }) => {
     await page.goto('/guides');
     const header = page.locator('header');
     await expect(header).toBeVisible();
@@ -28,33 +28,20 @@ test.describe('Figma guides hero', () => {
     await expect(filters.getByRole('tab', { name: 'Workers’ comp' })).toBeVisible();
     await expect(header.locator('a').first()).toHaveAttribute('href', '/');
 
-    const featured = page.getByTestId('guides-featured');
-    await expect(featured.getByRole('heading', { name: GUIDES_COPY.featured })).toBeVisible();
-    expect(await px(featured, 'padding-top')).toBe(GUIDES_FIGMA.featuredPt);
-    expect(await px(featured, 'padding-bottom')).toBe(GUIDES_FIGMA.featuredPb);
-    await expectPadX(featured, GUIDES_FIGMA.pageX);
-    await expectGap(featured, GUIDES_FIGMA.featuredGap);
-    const photo = featured.locator('img');
-    expect(await px(photo, 'width')).toBe(GUIDES_FIGMA.photoW);
-    expect(await px(photo, 'height')).toBe(GUIDES_FIGMA.photoH);
-    await expectFontSize(
-      featured.getByRole('heading', { name: GUIDES_COPY.featured }),
-      GUIDES_FIGMA.featuredTitle,
-    );
-    await expect(featured).toHaveAttribute('href', '/guides/no-problem-found');
+    const rows = page.getByTestId('guides-row');
+    await expect(rows).toHaveCount(3);
+    await expect(rows.first()).toHaveAttribute('href', '/guides/other-driver-insurance');
   });
 
-  test('filters the list and hides featured when it does not match', async ({ page }) => {
+  test('filters the list by topic', async ({ page }) => {
     await page.goto('/guides');
     const filters = page.getByTestId('guides-filters');
     await filters.getByRole('tab', { name: 'Lemon law' }).click();
-    await expect(page.getByTestId('guides-featured')).toBeVisible();
     await expect(page.getByTestId('guides-row')).toHaveCount(1);
     await expect(page.getByRole('heading', { name: GUIDES_COPY.lemonRow })).toBeVisible();
 
     await filters.getByRole('tab', { name: 'Personal injury' }).click();
-    await expect(page.getByTestId('guides-featured')).toHaveCount(0);
-    await expect(page.getByTestId('guides-row')).toHaveCount(3);
+    await expect(page.getByTestId('guides-row')).toHaveCount(1);
   });
 
   test('home header and footer link into this page', async ({ page }) => {
@@ -68,10 +55,10 @@ test.describe('Figma guides hero', () => {
     await expect(page).toHaveURL(/\/guides/);
   });
 
-  test('featured story opens the article', async ({ page }) => {
+  test('list row opens its article', async ({ page }) => {
     await page.goto('/guides');
-    await page.getByTestId('guides-featured').click();
-    await expect(page).toHaveURL(/\/guides\/no-problem-found/);
-    await expect(page.getByRole('heading', { name: GUIDES_COPY.featured })).toBeVisible();
+    await page.getByTestId('guides-row').first().click();
+    await expect(page).toHaveURL(/\/guides\/other-driver-insurance/);
+    await expect(page.getByRole('heading', { name: GUIDES_COPY.firstTitle })).toBeVisible();
   });
 });

@@ -3,8 +3,8 @@ import { getGuidesView } from '@/features/guides/data/use-guides';
 import { ClosingCta } from '@/features/home/components/ClosingCta';
 import { HomeFooter } from '@/features/home/components/HomeFooter';
 
-export function GuidesPage() {
-  const view = getGuidesView();
+export async function GuidesPage() {
+  const view = await getGuidesView();
 
   return (
     <div className="page-zoom min-w-0 overflow-x-clip">
